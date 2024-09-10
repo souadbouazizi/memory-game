@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiple Games Interface</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container text-center mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8 shadow py-5 px-4">
+          <h1 class="text-warning fs-1">MEMORY GAMES</h1>
+          <h3 class="mb-5">Select a Game to Play</h3>
+
+          <!-- Buttons to Select Game -->
+          <table style="margin: 0 auto">
+            <tr>
+              <td class="px-3 py-3">
+                <button
+                  type="button"
+                  class="btn rounded-pill boder border-3 btn-outline-pink fw-bold text-uppercase fs-3 p-0"
+                  onclick="showGame('game1')"
+                  style="border: 8px solid"
+                >
+                  <img
+                    src="./images/game1/btn-hellokity.png"
+                    style="width: 120px"
+                  />
+                </button>
+              </td>
+              <td class="px-3 py-3">
+                <button
+                  type="button"
+                  class="btn rounded-pill boder border-3 btn-outline-secondary fw-bold text-uppercase fs-3 p-0"
+                  onclick="showGame('game2')"
+                  style="border: 8px solid"
+                >
+                  <img src="./images/game2/btn-kiki.png" style="width: 120px" />
+                </button>
+              </td>
+              <td class="px-3 py-3">
+                <button
+                  type="button"
+                  class="btn rounded-pill boder border-3 btn-outline-success fw-bold text-uppercase fs-3 p-0"
+                  onclick="showGame('game3')"
+                  style="border: 8px solid"
+                >
+                  <img src="./images/game3/btn-dora.png" style="width: 120px" />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-3 py-3">
+                <button
+                  type="button"
+                  class="btn rounded-pill boder border-3 btn-outline-danger mt-3 fw-bold text-uppercase fs-3 p-0"
+                  onclick="showGame('game4')"
+                  style="border: 8px solid"
+                >
+                  <img
+                    src="./images/game4/btn-billeSeb.png"
+                    style="width: 120px"
+                  />
+                </button>
+              </td>
+              <td class="px-3 py-3">
+                <button
+                  type="button"
+                  class="btn rounded-pill boder border-3 btn-outline-warning mt-3 fw-bold text-uppercase fs-3 p-0"
+                  onclick="showGame('game5')"
+                  style="border: 8px solid"
+                >
+                  <img
+                    src="./images/game5/btn-spiderman.png"
+                    style="width: 120px"
+                  />
+                </button>
+              </td>
+              <td class="px-3 py-3">
+                <button
+                  type="button"
+                  class="btn rounded-pill boder border-3 btn-outline-info mt-3 fw-bold text-uppercase fs-3 p-0"
+                  onclick="showGame('game6')"
+                  style="border: 8px solid"
+                >
+                  <img
+                    src="./images/game6/btn-Pokemon.png"
+                    style="width: 120px"
+                  />
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-3 py-3">
+                <button
+                  type="button"
+                  class="btn rounded-pill boder border-3 btn-outline-yellow mt-3 fw-bold text-uppercase fs-3 p-0"
+                  onclick="showGame('game7')"
+                  style="border: 8px solid"
+                >
+                  <img
+                    src="./images/game7/btn-SpongeBob.png"
+                    style="width: 120px"
+                  />
+                </button>
+              </td>
+              <td class="px-3 py-3">
+                <button
+                  type="button"
+                  class="btn rounded-pill boder border-3 btn-outline-dark mt-3 fw-bold text-uppercase fs-3 p-0"
+                  onclick="showGame('game8')"
+                  style="border: 8px solid"
+                >
+                  <img
+                    src="./images/game8/btnTom-&-jerry.png"
+                    style="width: 120px"
+                  />
+                </button>
+              </td>
+              <td class="px-3 py-3">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary rounded-pill boder border-3 mt-3 fw-bold text-uppercase fs-3 p-0"
+                  onclick="showGame('game9')"
+                  style="border: 8px solid"
+                >
+                  <img
+                    src="./images/game9/btn-Mickey-Mouse.png"
+                    style="width: 120px"
+                  />
+                </button>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Game Sections -->
+          <!-- Game1 -->
+          <div
+            id="game1"
+            class="game-section"
+            style="display: none; text-align: center"
+          >
+            <table style="margin: 0 auto">
+              <tr>
+                <td>
+                  <h4>Time: <span id="game1-timer">60</span>s</h4>
+                </td>
+                <td>
+                  <h2 style="color: rgb(253, 7, 146)">
+                    Memory Game
+                  </h2>
+                  <h5> Hello kitty</h5>
+                  <p>Match all the pairs before time runs out!</p>
+                </td>
+                <td>
+                  <div>
+                    <h4>Score: <span id="game1-score">0</span></h4>
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <div class="game-grid" id="game1-game-grid">
+              <!-- Squares will be generated here by JavaScript -->
+            </div>
+            <button
+              id="game1-start-btn"
+              class="btn btn-pink px-3 py-2 mt-3"
+              data-game-id="game1"
+              style="width: 200px"
+            >
+              Start Game
+            </button>
+          </div>
+
+          <!-- Game2 -->
+          <div id="game2" class="game-section" style="display: none">
+            <table style="margin: 0 auto">
+              <tr>
+                <td>
+                  <h4>Time: <span id="game2-timer">60</span>s</h4>
+                </td>
+                <td>
+                  <h2 class="text-secondary">
+                    Memory Game
+                  </h2>
+                  <h5> kiki</h5>
+                  <p>Match all the pairs before time runs out!</p>
+                </td>
+                <td>
+                  <div>
+                    <h4>Score: <span id="game2-score">0</span></h4>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="game-grid" id="game2-game-grid">
+              <!-- Squares will be generated here by JavaScript -->
+            </div>
+            <!-- Corrected ID for Game 2 start button -->
+            <button
+              id="game2-start-btn"
+              class="btn btn-secondary px-3 py-2 mt-3"
+              data-game-id="game2"
+              style="width: 200px"
+            >
+              Start Game
+            </button>
+          </div>
+
+          <!-- Game3 -->
+          <div id="game3" class="game-section" style="display: none">
+            <table style="margin: 0 auto">
+              <tr>
+                <td>
+                  <h4>Time: <span id="game3-timer">60</span>s</h4>
+                </td>
+                <td>
+                  <h2 class="text-success">
+                     Memory Game
+                  </h2>
+                  <h5>dora</h5>
+                  <p>Match all the pairs before time runs out!</p>
+                </td>
+                <td>
+                  <div>
+                    <h4>Score: <span id="game3-score">0</span></h4>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="game-grid" id="game3-game-grid">
+              <!-- Squares will be generated here by JavaScript -->
+            </div>
+            <!-- Corrected ID for Game 3 start button -->
+            <button
+              id="game3-start-btn"
+              class="btn btn-success mt-3"
+              data-game-id="game3"
+              style="width: 200px"
+            >
+              Start Game
+            </button>
+          </div>
+
+          <!-- Game4 -->
+          <div id="game4" class="game-section" style="display: none">
+            <table class="table" style="margin: 0 auto">
+              <tr>
+                <td>
+                  <h4>Time: <span id="game4-timer">60</span>s</h4>
+                </td>
+                <td>
+                  <h2 class="text-danger">
+                     Memory Game
+                  </h2>
+                  <h5>bille Sebastien</h5>
+                  <p>Match all the pairs before time runs out!</p>
+                </td>
+                <td>
+                  <div>
+                    <h4>Score: <span id="game4-score">0</span></h4>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="game-grid" id="game4-game-grid">
+              <!-- Squares will be generated here by JavaScript -->
+            </div>
+            <!-- Corrected ID for Game 4 start button -->
+            <button
+              id="game4-start-btn"
+              class="btn btn-danger px-3 py-2 mt-3"
+              data-game-id="game4"
+              style="width: 200px"
+            >
+              Start Game
+            </button>
+          </div>
+
+          <!-- Game5 -->
+          <div id="game5" class="game-section" style="display: none">
+            <table style="margin: 0 auto">
+              <tr>
+                <td>
+                  <h4>Time: <span id="game5-timer">60</span>s</h4>
+                </td>
+                <td>
+                  <h2 class="text-warning">
+                   Memory Game
+                  </h2>
+                  <h5>spiderman</h5>
+                  <p>Match all the pairs before time runs out!</p>
+                </td>
+                <td>
+                  <div>
+                    <h4>Score: <span id="game5-score">0</span></h4>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="game-grid" id="game5-game-grid">
+              <!-- Squares will be generated here by JavaScript -->
+            </div>
+            <!-- Corrected ID for Game 5 start button -->
+            <button
+              id="game5-start-btn"
+              class="btn btn-warning px-3 py-2 mt-3"
+              data-game-id="game5"
+              style="width: 200px"
+            >
+              Start Game
+            </button>
+          </div>
+
+          <!-- Game6 -->
+          <div id="game6" class="game-section" style="display: none">
+            <table style="margin: 0 auto">
+              <tr>
+                <td>
+                  <h4>Time: <span id="game6-timer">60</span>s</h4>
+                </td>
+                <td>
+                  <h2 class="text-info">
+                    Memory Game
+                  </h2>
+                  <h5>Pokemon</h5>
+                  <p>Match all the pairs before time runs out!</p>
+                </td>
+                <td>
+                  <div>
+                    <h4>Score: <span id="game6-score">0</span></h4>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="game-grid" id="game6-game-grid">
+              <!-- Squares will be generated here by JavaScript -->
+            </div>
+            <!-- Corrected ID for Game 6 start button -->
+            <button
+              id="game6-start-btn"
+              class="btn btn-info px-3 py-2 mt-3"
+              data-game-id="game6"
+              style="width: 200px"
+            >
+              Start Game
+            </button>
+          </div>
+
+          <!-- Game7 -->
+          <div id="game7" class="game-section" style="display: none">
+            <table style="margin: 0 auto">
+              <tr>
+                <td>
+                  <h4>Time: <span id="game7-timer">60</span>s</h4>
+                </td>
+                <td>
+                  <h2 style="color:#d7d700;">
+                   Memory Game
+                  </h2 >
+                  <h5>SpongeBob</h5>
+                  <p>Match all the pairs before time runs out!</p>
+                </td>
+                <td>
+                  <div>
+                    <h4>Score: <span id="game7-score">0</span></h4>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="game-grid" id="game7-game-grid">
+              <!-- Squares will be generated here by JavaScript -->
+            </div>
+            <!-- Corrected ID for Game 7 start button -->
+            <button
+              id="game7-start-btn"
+              class="btn btn-yellow mt-3"
+              data-game-id="game7"
+              style="width: 200px"
+            >
+              Start Game
+            </button>
+          </div>
+
+          <!-- Game8 -->
+          <div id="game8" class="game-section" style="display: none">
+            <table style="margin: 0 auto">
+              <tr>
+                <td>
+                  <h4>Time: <span id="game8-timer">60</span>s</h4>
+                </td>
+                <td>
+                  <h2 class="text-dark">
+                    Memory Game
+                  </h2>
+                  <h5>Tom-&-jerry</h5>
+                  <p>Match all the pairs before time runs out!</p>
+                </td>
+                <td>
+                  <div>
+                    <h4>Score: <span id="game8-score">0</span></h4>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="game-grid" id="game8-game-grid">
+              <!-- Squares will be generated here by JavaScript -->
+            </div>
+            <!-- Corrected ID for Game 8 start button -->
+            <button
+              id="game8-start-btn"
+              class="btn btn-dark px-3 py-2 mt-3"
+              data-game-id="game8"
+              style="width: 200px"
+            >
+              Start Game
+            </button>
+          </div>
+
+          <!-- Game9 -->
+          <div id="game9" class="game-section" style="display: none">
+            <table style="margin: 0 auto" class="table">
+              <tr>
+                <td>
+                  <h4>Time: <span id="game9-timer">60</span>s</h4>
+                </td>
+                <td>
+                  <h2 class="text-primary">
+                    Memory Game
+                  </h2>
+                  <h5>Mickey Mouse</h5>
+                  <p>Match all the pairs before time runs out!</p>
+                </td>
+                <td>
+                  <div>
+                    <h4>Score: <span id="game9-score">0</span></h4>
+                  </div>
+                </td>
+              </tr>
+            </table>
+            <div class="game-grid" id="game9-game-grid">
+              <!-- Squares will be generated here by JavaScript -->
+            </div>
+            <!-- Corrected ID for Game 9 start button -->
+            <button
+              id="game9-start-btn"
+              class="btn btn-primary px-3 py-2 mt-3"
+              data-game-id="game9"
+              style="width: 200px"
+            >
+              Start Game
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript to Handle the Game Logic -->
+    <script src="./script.js"></script>
+    <script>
+      function showGame(gameId) {
+        // Hide all game sections
+        const games = document.querySelectorAll(".game-section");
+        games.forEach((game) => (game.style.display = "none"));
+
+        // Show the selected game section
+        document.getElementById(gameId).style.display = "block";
+      }
+    </script>
+    <script></script>
+  </body>
+</html>

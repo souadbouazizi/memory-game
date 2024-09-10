@@ -1,0 +1,99 @@
+
+
+
+
+
+
+
+
+
+
+.btn-pink{
+  background-color: #f851a2 !important;
+  color: white;
+}
+
+
+.btn-pink:hover{
+  background-color: pink !important;
+  color: white;
+}
+
+
+.btn-yellow{
+  background-color: #d7d700 !important;
+  color: gray;
+}
+
+
+.btn-yellow:hover{
+  background-color: yellowgreen !important;
+  color: gray;
+}
+
+.btn-outline-pink{
+  border-color: #f851a2 !important;
+  color: white;
+}
+
+
+.btn-outline-pink:hover{
+  border-color: pink !important;
+  color: white;
+}
+
+
+.btn-outline-yellow{
+  border-color: #d7d700 !important;
+  color: gray;
+}
+
+
+.btn-outline-yellow:hover{
+  border-color: yellowgreen !important;
+  color: gray;
+}
+
+
+
+
+
+.game-section {
+    display: none; /* Hide all game sections by default */
+    margin-top: 20px;
+  }
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+
+
+  .square {
+  width: 90px;
+  height: 90px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  position: relative;
+}
+
+.square img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hidden img {
+  display: none;
+}
+
+.matched {
+  background-color: #d4edda;
+  pointer-events: none; /* Disable clicks on matched squares */
+}
